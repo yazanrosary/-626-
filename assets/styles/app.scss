@@ -1,0 +1,210 @@
+/*
+ * IMPORTANT NOTE: Theme based on Tailwindcss but for the purpose of simplifing the DOM we use
+ * tailwind classes with @apply directive in the SCSS files
+*/
+
+/**
+ * SETTINGS
+ * Tailwind.............Import tailwind.
+ * Fonts................Any font files.
+ * Global...............Project-specific, globally available variables.
+ * Breakpoints..........Mixins and variables for responsive styles.
+ *
+ * GENERIC
+ * Common...............All commn styles and assistan classes and common style fixes
+ * Reset................Reset specific elements to make them easier to style in other contexts.
+ * Animations...........Some of animations from anime.css
+ * Lazyload.............Lazyload placeholder styles
+ * RTL..................Specific styles for RTL.
+ * LTR..................Specific styles for LTR.
+ *
+ * ELEMENTS
+ * Forms................Element-level form styling.
+ * Buttons..............Specific styles for buttons.
+ * Radio................Specific styles for custom radio button.
+ * Radio Images.........Specific styles for radio images, used in product options.
+ *
+ * COMPONENTS
+ * Header...............Specific styles for header styles.
+ * Footer...............Specific styles for footer styles.
+ * Menu.................Specific styles for main menu and mobile menu styles.
+ * User Menu............Specific styles for user menu dropdown.
+ * User Pages...........Specific styles for user pages like profile, notifications, orders...
+ * Home Blocks..........Specific styles for home blocks.
+ * Slider...............Specific styles for sliders.
+ * Product..............Specific styles for single product page and it's elements.
+ * Brands...............Specific styles for brands page.
+ * Placeholder..........Specific styles for no content placeholders.
+ * Gifting..............Specific styles for gifting system.
+ * Loyalty..............Specific styles for loyalty system.
+ *
+ * UTILITIES
+ * Chat Bots............Specific styles for chats bots widget.
+ * Swal.................Specific styles for Sweet Alert addon.
+ * Safari Fixes.........Specific styles for Safari Browser.
+ *
+ * EMBEDED ADDONS
+ * Lite Youtube Embed...Specific styles for lite-youtube-embed addon.
+ * Swiper...............Specific styles for swiper slider addon.
+ * MMenu................Specific styles for mmenu addon.
+ *
+*/
+
+@import './01-settings/tailwind';
+@import './01-settings/fonts';
+@import './01-settings/global';
+@import './01-settings/breakpoints';
+
+@import './02-generic/reset';
+@import './02-generic/common';
+@import './02-generic/tooltip';
+@import './02-generic/animations';
+@import './02-generic/lazyload';
+@import './02-generic/rtl';
+@import './02-generic/ltr';
+@import './02-generic/mixins';
+
+@import './03-elements/form';
+@import './03-elements/buttons';
+@import './03-elements/radio';
+@import './03-elements/radio-images';
+@import './03-elements/product-card';
+@import './03-elements/testimonials';
+
+@import './04-components/header';
+@import './04-components/footer';
+@import './04-components/menus';
+@import './04-components/user-menu';
+@import './04-components/user-pages';
+@import './04-components/home-blocks';
+@import './04-components/slider';
+@import './04-components/product';
+@import './04-components/brands';
+@import './04-components/no-content-placeholder';
+@import './04-components/gifting';
+@import './04-components/loyalty';
+@import './04-components/virtooal';
+@import './04-components/landing-page';
+@import './04-components/filters';
+@import './04-components/add-product-toast';
+
+@import './05-utilities/chat-bots';
+@import './05-utilities/swal';
+@import './05-utilities/safari-fixes';
+@import './05-utilities/font-customization';
+
+@import 'lite-youtube-embed/src/lite-yt-embed.css';
+@import 'mmenu-light/dist/mmenu-light.css';
+
+/* yazanrosary — حبة لها أصل: طبقة الهوية المخصصة فوق مكونات Twilight. */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
+
+:root {
+  --yz-ivory: #f5f0e7;
+  --yz-paper: #efe7dc;
+  --yz-ink: #2b2722;
+  --yz-clay: #a45a3a;
+  --yz-line: #d9cbbb;
+  --font-main: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+body.theme-raed {
+  background: var(--yz-ivory);
+  color: var(--yz-ink);
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+body.theme-raed .main-nav-container,
+body.theme-raed .store-header,
+body.theme-raed .store-footer {
+  background: var(--yz-ivory);
+  color: var(--yz-ink);
+  border-color: var(--yz-line);
+}
+
+body.theme-raed .main-nav-container { box-shadow: none; border-bottom: 1px solid var(--yz-line); }
+body.theme-raed .navbar-brand img { max-height: 58px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+body.theme-raed h1, body.theme-raed h2, body.theme-raed h3, body.theme-raed .font-bold { font-family: 'Noto Kufi Arabic', sans-serif; }
+body.theme-raed a:hover { color: var(--yz-clay); }
+body.theme-raed .btn-primary, body.theme-raed salla-button[width='wide'] { background: var(--yz-clay); border-color: var(--yz-clay); }
+body.theme-raed .btn-primary:hover { background: #87482f; border-color: #87482f; }
+body.theme-raed .store-footer { border-top: 1px solid var(--yz-line); }
+body.theme-raed .store-footer__inner { background: var(--yz-ivory); }
+body.theme-raed .store-footer h3 { color: var(--yz-ink); font-family: 'Noto Kufi Arabic', sans-serif; }
+body.theme-raed .s-product-card-content, body.theme-raed .s-product-card-image { border-radius: 0; }
+body.theme-raed .s-product-card { background: var(--yz-paper); border: 1px solid var(--yz-line); box-shadow: none; transition: transform .2s ease-out, box-shadow .2s ease-out; }
+body.theme-raed .s-product-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(83,61,46,.12); }
+body.theme-raed .s-product-card-content { padding: 1rem; }
+body.theme-raed .s-product-card-price { color: var(--yz-ink); }
+body.theme-raed .s-product-card-price .before { color: #978a7e; }
+body.theme-raed .s-button-element { border-radius: 0; }
+body.theme-raed .home-block { margin-block: 3rem; }
+body.theme-raed .home-block h2 { letter-spacing: -.02em; }
+body.theme-raed .s-slider-block__title { color: var(--yz-ink); }
+body.theme-raed .s-product-card-vertical .s-product-card-image { background: var(--yz-paper); }
+body.theme-raed .s-product-card-vertical .s-product-card-content { background: var(--yz-paper); }
+body.theme-raed .product-single { background: var(--yz-ivory); }
+body.theme-raed .product-single .product-title { font-family: 'Noto Kufi Arabic', sans-serif; color: var(--yz-ink); }
+body.theme-raed .product-single .product-price { color: var(--yz-clay); }
+body.theme-raed .product-single .product-form { border-color: var(--yz-line); }
+body.theme-raed .s-breadcrumb { color: #817369; }
+body.theme-raed .s-breadcrumb a:hover { color: var(--yz-clay); }
+@media (max-width: 640px) {
+  body.theme-raed .navbar-brand img { max-height: 48px; }
+  body.theme-raed .home-block { margin-block: 2rem; }
+}
+
+.yz-hero {
+  position: relative;
+  overflow: hidden;
+  background: #efe7dc;
+  border-bottom: 1px solid #d9cbbb;
+}
+.yz-hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, transparent 0 18px, #b47757 18px 21px, transparent 21px 40px);
+  opacity: .65;
+}
+.yz-hero__inner {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34%;
+  gap: 3rem;
+  align-items: center;
+  padding-block: 5rem 4rem;
+}
+.yz-hero__copy { max-width: 610px; }
+.yz-kicker { color: #a45a3a; font-size: .72rem; letter-spacing: .16em; font-weight: 700; }
+.yz-hero h1 { margin: 1rem 0 1.2rem; color: #2b2722; font-family: 'Noto Kufi Arabic', sans-serif; font-size: clamp(3.4rem, 8vw, 7rem); line-height: 1.12; letter-spacing: -.08em; }
+.yz-hero h1 em, .yz-material-note h2 em { color: #a45a3a; font-family: 'Amiri', serif; font-weight: 400; font-style: italic; letter-spacing: -.04em; }
+.yz-hero p { max-width: 510px; color: #62564d; font-size: 1.05rem; line-height: 2; }
+.yz-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem; margin-top: 2rem; }
+.yz-button { display: inline-flex; align-items: center; gap: .65rem; padding: .9rem 1.35rem; background: #a45a3a; color: #fff8ef !important; transition: transform .18s ease-out, background .18s ease-out; }
+.yz-button:hover { background: #87482f !important; transform: translateY(-2px); }
+.yz-link { display: inline-flex; align-items: center; gap: .5rem; color: #62564d; border-bottom: 1px solid #cdbdad; padding-bottom: .35rem; }
+.yz-stats { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3.2rem; padding-top: 1rem; border-top: 1px solid #d9cbbb; color: #817369; font-size: .75rem; }
+.yz-stats span { display: flex; align-items: baseline; gap: .35rem; }
+.yz-stats strong { color: #2b2722; font-family: 'Noto Kufi Arabic', sans-serif; font-size: 1.25rem; }
+.yz-hero__seal { position: relative; min-height: 315px; display: grid; place-items: center; color: #a45a3a; border: 1px solid #cdbdad; border-radius: 50%; transform: rotate(-8deg); }
+.yz-hero__seal::before, .yz-hero__seal::after { content: ''; position: absolute; inset: 10%; border: 1px solid #cdbdad; border-radius: 50%; }
+.yz-hero__seal::after { inset: 18%; border-style: dashed; opacity: .75; }
+.yz-seal-ring { width: 92px; height: 92px; border: 2px solid #a45a3a; border-radius: 50%; border-right-color: transparent; }
+.yz-seal-beads { position: absolute; display: flex; gap: .7rem; transform: translateY(-1px); }
+.yz-seal-beads i { width: 17px; height: 17px; display: block; border-radius: 50%; background: #a45a3a; box-shadow: 0 0 0 4px #efe7dc, 0 0 0 5px #a45a3a; }
+.yz-hero__seal span { position: absolute; bottom: 25%; font-size: .68rem; font-weight: 700; letter-spacing: .18em; transform: rotate(8deg); }
+.yz-home-blocks { background: #f5f0e7; }
+.yz-material-note { padding: 4rem 0; background: #2b2722; color: #f5f0e7; }
+.yz-material-note h2 { margin: .8rem 0 1rem; font-family: 'Noto Kufi Arabic', sans-serif; font-size: clamp(2rem, 4vw, 3.7rem); }
+.yz-material-note p { max-width: 620px; color: #d9cbbb; line-height: 2; }
+@media (max-width: 760px) {
+  .yz-hero__inner { min-height: auto; grid-template-columns: 1fr; gap: 2rem; padding-block: 3.5rem 3rem; }
+  .yz-hero__seal { min-height: 230px; max-width: 230px; margin-inline: auto; }
+  .yz-hero h1 { font-size: clamp(3.1rem, 16vw, 5.2rem); }
+  .yz-hero p { font-size: .95rem; }
+  .yz-stats { margin-top: 2rem; }
+}
